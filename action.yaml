@@ -1,6 +1,8 @@
 name: 'Kong Pongo'
 description: 'Installs Pongo, tool for testing Kong Gateway plugins'
-
+branding:
+  icon: activity
+  color: blue
 
 
 inputs:
