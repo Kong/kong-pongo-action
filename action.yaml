@@ -68,11 +68,11 @@ runs:
       run: |
         if [ "${{ inputs.pongo_version }}" == "latest" ]; then
           # latest released version; fetch full git history and branches
-          echo "::set-output name=fetch::0"
+          echo "fetch=0" >> $GITHUB_OUTPUT
         else
           # specific version/branch; fetch single commit on that tag/version
-          echo "::set-output name=fetch::1"
-          echo "::set-output name=ref::${{ inputs.pongo_version }}"
+          echo "fetch=1" >> $GITHUB_OUTPUT
+          echo "ref=${{ inputs.pongo_version }}" >> $GITHUB_OUTPUT
         fi
       shell: bash
 
