@@ -56,6 +56,10 @@ jobs:
 
 ## History
 
-#### Version 1 (released 7-July-2022)
+#### Version 1.0.1 (released 20-Oct-2022)
+
+- Github: replace deprecated "set-output" with environment files
+
+#### Version 1 (released 7-Jul-2022)
 
 - Initial version of the action
