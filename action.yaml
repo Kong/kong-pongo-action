@@ -125,7 +125,7 @@ runs:
           echo Exported KONG_LICENSE_DATA as global environment variable
         fi
 
-        if [ "${{ inputs.kong_version }}" == "nightly-ee" ]; then
+        if [ "${{ inputs.kong_version }}" == "dev-ee" ]; then
           echo "DOCKER_USERNAME=${{ inputs.enterprise_nightly_docker_username }}" >> $GITHUB_ENV
           echo "DOCKER_PASSWORD=${{ inputs.enterprise_nightly_docker_password }}" >> $GITHUB_ENV
           echo Exported DOCKER_USERNAME and DOCKER_PASSWORD as global environment variables
