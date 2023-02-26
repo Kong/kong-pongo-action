@@ -39,7 +39,7 @@ jobs:
         kong_version:
         - "2.7.x"
         - "2.8.x"
-        - "nightly"
+        - "dev"
 
     steps:
     - uses: actions/checkout@v3
@@ -55,6 +55,11 @@ jobs:
 ```
 
 ## History
+
+#### Version 1.0.2 (released 26-Feb-2023)
+
+- Nightlies: also export required variable if version is `"nightly-ee"` (the old
+  name for `"dev-ee"` used since Pongo 2)
 
 #### Version 1.0.1 (released 20-Oct-2022)
 
