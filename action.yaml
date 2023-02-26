@@ -41,21 +41,21 @@ inputs:
   enterprise_nightly_docker_password:
     description: >
       Kong Inc internal only!
-      The password to access the nightly Kong Enterprise images for `nightly-ee`
+      The password to access the nightly Kong Enterprise images for `dev-ee`
       testing.
     required: false
 
   enterprise_nightly_docker_username:
     description: >
       Kong Inc internal only!
-      The username to access the nightly Kong Enterprise images for `nightly-ee`
+      The username to access the nightly Kong Enterprise images for `dev-ee`
       testing.
     required: false
 
   github_token:
     description: >
       Kong Inc internal only!
-      The token to clone the `kong-ee` git repo for `nightly-ee` testing.
+      The token to clone the `kong-ee` git repo for `dev-ee` testing.
     required: false
 
 
@@ -103,7 +103,7 @@ runs:
     - name: Export global Pongo configuration variables
       # The license is exported only if given, and its signature masked.
       # The Kong version is always exported.
-      # The docker credentials are only exported if testing 'nightly-ee'
+      # The docker credentials are only exported if testing 'dev-ee'
       shell: bash
       run: |
         echo "KONG_VERSION=${{ inputs.kong_version }}" >> $GITHUB_ENV
@@ -125,7 +125,8 @@ runs:
           echo Exported KONG_LICENSE_DATA as global environment variable
         fi
 
-        if [ "${{ inputs.kong_version }}" == "nightly-ee" ]; then
+        # Note: "nightly-ee" was the old name with Pongo 1.x
+        if [ "${{ inputs.kong_version }}" == "nightly-ee" ] || [ "${{ inputs.kong_version }}" == "dev-ee" ]; then
           echo "DOCKER_USERNAME=${{ inputs.enterprise_nightly_docker_username }}" >> $GITHUB_ENV
           echo "DOCKER_PASSWORD=${{ inputs.enterprise_nightly_docker_password }}" >> $GITHUB_ENV
           echo Exported DOCKER_USERNAME and DOCKER_PASSWORD as global environment variables
