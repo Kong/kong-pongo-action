@@ -134,13 +134,13 @@ runs:
 
 
     - name: Start the Pongo environment
-      if: ${{ inputs.start_environment }} == "true"
+      if: ${{ inputs.start_environment == 'true' }}
       run: pongo up
       shell: bash
 
 
     - name: Build the Pongo test image for Kong version ${{ inputs.kong_version }}
-      if: ${{ inputs.build_image }} == "true"
+      if: ${{ inputs.build_image == 'true' }}
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
       run: pongo build
