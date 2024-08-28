@@ -56,6 +56,10 @@ jobs:
 
 ## History
 
+#### Version 1.0.3 (released 28-Aug-2024)
+
+ -  fix: conditional syntax errors in `steps[*].if` 
+
 #### Version 1.0.2 (released 26-Feb-2023)
 
 - Nightlies: also export required variable if version is `"nightly-ee"` (the old
